@@ -5,6 +5,14 @@ Docker image for generating total coverage of all tests in a Go repository
 
 This is to be used from inside the root directory of a go project that is properly placed inside your gopath.
 
+With go modules
+
+```
+docker run -v $PWD:/src gomicro/gocoverage
+```
+
+Without go modules
+
 ```
 docker run -v $PWD:/go${PWD#"$GOPATH"} --workdir /go${PWD#"$GOPATH"} gomicro/gocoverage
 ```
