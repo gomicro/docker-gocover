@@ -7,7 +7,7 @@ mkdir -p /coverage/tmp
 
 echo "Generating coverage output"
 for j in $(go list ./... | grep -v '/ext/'); do
-  CGO_ENABLED=0 go test -covermode=count -coverprofile=/coverage/$(basename $j).out $j > /dev/null 2>&1
+  CGO_ENABLED=0 go test -covermode=count -coverprofile=/coverage/$(basename $j).out $j
 done
 
 echo "Condensing coverage output"
